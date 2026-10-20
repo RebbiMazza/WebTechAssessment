@@ -1,0 +1,75 @@
+/* Style the header */
+.header {
+  grid-area: header;
+  background-image: url(pngtree-pink-watercolor-floral-background-with-copy-space-picture-image_15764316.jpg); width: 100%;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+  text-align: center;
+  color: black;
+  font-size: 45px;
+  font-style: bold;
+  font-family: Georgia, Times, serif;
+  margin : 0;
+}
+
+/* Style the left column */
+.sidenav {
+  font-family: Verdana, Geneva, sans-serif;
+}  
+
+/* Style sidenav elements */
+.sidenav1 {
+  font-family: Verdana, Geneva, sans-serif;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
+  white-space: normal !important;
+  word-wrap: break-word;
+
+}
+* {
+  margin: 0;
+
+/* Styling Tic-Tac-Toe */
+
+.container {
+    text-align: center;
+}
+
+.board {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    cursor: pointer;
+}
+}
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  font-size: smaller;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border: 1px hidden;
+  height: 100px;
+  margin: 0px 0px 0px 0px;
+}
