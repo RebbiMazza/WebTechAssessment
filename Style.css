@@ -12,8 +12,19 @@
   font-style: bold;
   font-family: Georgia, Times, serif;
   margin : 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: bold;
 }
-
+.header-logo {
+  height: 150px; 
+  width: auto;   
+  object-fit: contain;
+  margin-left: -30px;
+  left: 20px;
+  top: 50%;
+}
 
 /* Style the left column */
 .sidenav {
@@ -39,6 +50,7 @@
     color: #0d90ff;
 }
 * {
+  overflow-x: hidden;
   margin: 0;
 
 /* Styling Tic-Tac-Toe */
@@ -64,6 +76,12 @@
     cursor: pointer;
 }
 }
+
+/* Hover effect to the submit button */
+input[type="submit"]:hover {
+  background-color: #70ec76;
+}
+
 footer {
   background-color: #333;
   color: white;
