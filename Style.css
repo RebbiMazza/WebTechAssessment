@@ -14,6 +14,7 @@
   margin : 0;
 }
 
+
 /* Style the left column */
 .sidenav {
   font-family: Verdana, Geneva, sans-serif;
@@ -31,7 +32,11 @@
   overflow-x: hidden;
   white-space: normal !important;
   word-wrap: break-word;
+}
 
+/*modify hovering colour for accessibility*/
+.sidenav1:hover {
+    color: #0d90ff;
 }
 * {
   margin: 0;
