@@ -32,8 +32,8 @@
 
 
 
-<!--JSON for joke-container-->
-    <script id="joke-data" type="application/json">
+<!--JSON for joke-container
+<script id="joke-data" type="application/json">
 {
   "data": {
     "currentPageItems": 4,
@@ -70,48 +70,8 @@
   "statusCode": 200,
   "success": true
 }
-</script>
+</script>-->
 
-
-<!--Functions for Forms "Let's learn more about each other"-->
-    
-<script>
-/* Toggle to show forms*/
-    function toggleForm() {
-        const form = document.getElementById('myForm');
-        if (form.style.display === 'none' || form.style.display === '') {
-            form.style.display = 'block';
-            mySummary(); 
-        } else {
-            form.style.display = 'none';
-        }
-    }
-/*Submission blocker if forms are not filled out*/
-    function validateForm() {
-        let x = document.forms["myForm"]["choice"].value;
-        if (x == "") {
-            alert("Your choice must be filled out to proceed!");
-            return false;
-        }
-        else if (document.getElementById('color').value == "#000000") {
-            alert("Your eye colour must be filled out to proceed!");
-            return false;
-        }
-    }
-
-/*Summary function*/
-    function mySummary() {
-        if (document.getElementById('choice1').checked) { 
-            document.getElementById('summary').innerHTML = document.getElementById('choice1').value + ", they are really pretty!";
-        } else if (document.getElementById('choice2').checked) {
-            document.getElementById('summary').innerHTML = document.getElementById('choice2').value + ", we will get along well!";
-        } else if (document.getElementById('choice3').checked) {
-            document.getElementById('summary').innerHTML = document.getElementById('choice3').value + ", how can I blame you!";
-        } else {
-            document.getElementById('summary').innerHTML = "What will you select?";
-        } 
-    }
-</script>
     
 <div class="container-fluid p-0">
 <!-- Header Row -->
@@ -126,19 +86,19 @@
         <h2>Column 1</h2>
             <input type="button" id="joke-btn" class="btn btn-link width-100 text-start sidenav1" value="Click here for a random joke" onclick="displayRandomJoke()">
             <input type="button" id="forms-btn" class="btn btn-link w-100 text-start sidenav1" value="Let's Learn about each other!" onclick="toggleForm()">
-            <input type="button" id="tic-tac-toe" class="btn btn-link w-100 text-start sidevan1" value="Wanna Play?" onclick="displayTicTacToe()">
+            <input type="button" id="tic-tac-toe" class="btn btn-link w-100 text-start sidenav1" value="Shall we Play?" onclick="displayTicTacToe()">
     </div>
             
 <!-- Main Content Column -->
     <div class="col-md-9 col-lg-10 p-4" style="background-color: lightpink;">
         <h2>Hello!</h2>
         <!--1st topic-->  
-        <p>Step 1: Generate a joke here by clicking the generator on the side bar!</p> 
+        <p><b>Step 1:</b> Generate a joke here by clicking the generator on the side bar!</p> 
             <!-- Joke Box -->
-            <p id="joke-box" style="display:none; padding: 8px; font-style: italic; font-size: small; color: rgb(250, 23, 224);"></p>
+            <p id="joke-box" style="display:none; padding: 8px; font-style: italic; font-size: small; color: #990c89;"></p>
         
         <!--2nd topic-->        
-        <p>Step 2: Discover what are some of the things I like most and tell me about yours by clicking on the second button! </P>
+        <p><b>Step 2:</b> Discover what are some of the things I like most and tell me about yours by clicking on the second button! </P>
             <!--Form eye colour-->
             <form id="myForm" action="Thank-you-page.html" target="_blank" style="display:none" onsubmit="return validateForm()">
             <label for="color"><i>I have blue eyes.</i> <b>What's your eye colour?</b></label><br>
@@ -163,7 +123,7 @@
 
 
         <!--3rd topic-->
-        <p>Step 3: Discover what we will be playing today </p>
+        <p><b>Step 3:</b> Discover what we will be playing today </p>
 
         <!--Tic-Tac-Toe-->
         <div class="container" style="display:none">
@@ -182,49 +142,12 @@
             <button onclick="reset()">Reset</button>
         </div>
 
-    <script src="script.js"></script>
+
 
 </div>
 
-<script>
-        /* Read the JSON from the HTML container element */
-        const rawData = document.getElementById('joke-data').textContent;
-        const responseJson = JSON.parse(rawData);
-
-        /* Extract the array of jokes */
-        const jokes = responseJson.data.data;
-        const $jokeBox = $('#joke-box');
-
-        /* Function to display random joke */
-        function displayRandomJoke() {
-            /* Logic to get new joke only when hidden */
-            if ($jokeBox.is(':hidden')) {
-                const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
-                $jokeBox.text(randomJoke.content);
-                $jokeBox.slideDown(300);
-            } else {
-                $jokeBox.slideUp(300);
-            }
-        }     
-</script>
-
-
-
-
-<!-- Function to display tic tac toe-->
- 
-<script>
-
-    function displayTicTacToe() {
-        /* Logic to get table only when hidden */
-        if ($(".container").is(':hidden')) {
-            $(".container").slideDown(300);
-        } else {
-            $(".container").slideUp(300);
-        }
-    }   
-</script>
-
+<!--adding js here as before was not being red-->
+<script src="script.js"></script>
 <!-- Page Footer-->
  <footer class="bg-dark text-white text-center p-3">
         <p>&copy; Rebecca, 2026 Web Technologies Assessment.</p> 
